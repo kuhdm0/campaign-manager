@@ -1,8 +1,16 @@
 import React from 'react';
+import './App.scss';
+import Navbar from './components/Navbar';
+import CampaignsList from './components/CampaignsList';
 
 function App() {
   return (
-    <div>Campaign Manager will be here</div>
+    <>
+      <Navbar />
+      <div className="content-wrapper">
+        <CampaignsList />
+      </div>  
+    </>  
   );
 }
 

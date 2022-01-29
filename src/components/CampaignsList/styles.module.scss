@@ -1,0 +1,80 @@
+@import '../../themes/_colors';
+
+.wrapper {
+    background-color: $themeWhite;
+    padding: 43px 32px 45px 32px;
+    color: $themeBlack;
+    border: solid 1px $themeGridGray;
+    border-radius: 2px;
+    width: 1376px;
+}
+
+.header {
+    display: flex;
+    padding: 0 0 16px 0;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.38;
+    letter-spacing: 0.86px;
+    white-space: nowrap;
+}
+
+.addButton {    
+    padding: 12px 16px 10px;
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    background-color: $themeBlue;
+    font-family: Helvetica;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 0.5px;
+    text-align: center;
+    color: $themeWhite;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+.content {
+    border-right: solid 1px $themeGridGray;
+    border-bottom: solid 1px $themeGridGray;    
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 11% 28% 28% 11% 11% 11%;
+    div {
+        border-left: solid 1px $themeGridGray;
+        border-top: solid 1px $themeGridGray;
+        font-family: Helvetica;
+        font-size: 16px;
+        line-height: 1.63;
+        letter-spacing: 0.57px;
+        padding: 20px;
+        a {
+            color: $themeBlue;
+        }
+    }
+}
+
+.tableHeader {
+    font-weight: bold;
+    background-color: $themeBGGray;
+    svg {
+        color: $themeBlue;
+        margin-bottom: -2px;
+        cursor: pointer;
+    }
+}
+
+.filterBar {
+    background-color: $themeBGGray;
+    color: $themeTextGray;
+    display: flex;
+    justify-content: end;
+}

@@ -1,0 +1,22 @@
+@import '../../themes/_colors';
+
+.navbar {
+    background-color: $themeBlue;
+    color: $themeWhite;
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.menuIcon {
+    margin-left: 64px;
+    cursor: pointer;
+}
+
+.navbarText {
+    font-family: Helvetica;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.86px;
+    padding-left: 16px;
+}
