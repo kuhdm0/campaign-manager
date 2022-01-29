@@ -1,0 +1,59 @@
+@import '../../themes/_colors';
+
+.modalHeader {
+    justify-content: center;
+    font-family: Helvetica;
+    font-size: 24px;
+    line-height: 1.38;
+    letter-spacing: 0.86px;
+    color: $themeBlack;
+    border-bottom: solid 4px $themeBorderGray;
+}
+
+.modalContent {
+    padding: 47px 103px 0 103px;
+    font-family: Helvetica;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.63;
+    letter-spacing: 0.57px;
+    input, select, textarea, span {
+        margin-left: 28px;
+    }
+    label {
+        color: $themeBlack;
+    }
+    span {
+        font-family: Helvetica;
+        font-size: 14px;
+        line-height: 1.86;
+        letter-spacing: 0.5px;
+        color: $themeBlack;
+        font-weight: normal;
+    }
+}
+
+.dateSection {
+    align-items: center;
+    input {
+        margin-left: 0;
+    }
+}
+
+.modalFooter {
+    border-top: 0;
+    margin-right: 12%;
+    button {
+        padding: 12px 16px 10px;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1;
+        letter-spacing: 0.5px;
+        box-shadow: 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.cancelButton {
+    border: solid 1px $themeBorderGray;
+    color: $themeBlue;
+}

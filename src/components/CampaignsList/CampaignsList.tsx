@@ -109,11 +109,7 @@ const CampaignsList: React.FC = () => {
   const [multiSelections, setMultiSelections] = useState<any>([]);
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.header}>
-        <div className={styles.title}>Alle Kampagnen</div>
-        <button className={styles.addButton}>KAMPAIGNE ERSTELLEN</button>
-      </div>  
+    <>      
       <div className={styles.content}>      
         <div className={styles.filterBar}>
           <span>Status filtern</span>
@@ -145,7 +141,7 @@ const CampaignsList: React.FC = () => {
           </div>
         )}
       </div>       
-    </div>
+    </>
   );
 };
 
