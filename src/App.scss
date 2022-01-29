@@ -1,5 +1,27 @@
+@import "~bootstrap/scss/bootstrap";
+@import './themes/_colors';
+
 *,*::before,*::after {
     box-sizing: border-box;
+}
+
+button {
+    border: none;
+    background-color: $themeLightBlue;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    span {           
+        font-size: 20px;
+        font-weight: bold;
+        color: $themeBlue;
+        margin-right: -6px;  
+    }
+}
+
+.rbt .rbt-input-multi .rbt-token {
+    background-color: $themeLightBlue;
+    color: $themeBlack;
 }
 
 .content-wrapper {

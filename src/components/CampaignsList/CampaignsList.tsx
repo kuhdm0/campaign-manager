@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from './styles.module.scss';
+import { Typeahead } from 'react-bootstrap-typeahead';
 import { TiArrowUnsorted } from 'react-icons/ti';
+import 'react-bootstrap-typeahead/css/Typeahead.css';
 
 type Status = 'Created' | 'Booked' | 'Archived';
 
@@ -103,6 +105,9 @@ const campaigns: Campaign[] = [
 ];
 
 const CampaignsList: React.FC = () => {  
+
+  const [multiSelections, setMultiSelections] = useState<any>([]);
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.header}>
@@ -111,12 +116,15 @@ const CampaignsList: React.FC = () => {
       </div>  
       <div className={styles.content}>      
         <div className={styles.filterBar}>
-          Status filtern
-          <select multiple>
-            {statuses.map(status => 
-              <option value={status} key={status}>{status}</option>
-            )}
-          </select>
+          <span>Status filtern</span>
+          <Typeahead
+            id="basic-typeahead-multiple"
+            labelKey="status"
+            multiple
+            onChange={setMultiSelections}
+            options={statuses}
+            selected={multiSelections}
+          />     
         </div>
         <div className={`${styles.row} ${styles.tableHeader}`}>
           <div>CS-ID <TiArrowUnsorted /></div>
