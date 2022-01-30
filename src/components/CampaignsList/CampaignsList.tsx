@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from './styles.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { TiArrowUnsorted } from 'react-icons/ti';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
-import { Campaign, Status } from "../../types";
-
-const statuses: Status[] = [
-  'Created',
-  'Booked',
-  'Archived',
-];
+import { Campaign } from "../../types";
+import { statuses } from "../../constants";
 
 interface OwnProps {
   campaigns: Campaign[];
@@ -18,6 +13,11 @@ interface OwnProps {
 const CampaignsList: React.FC<OwnProps> = ({ campaigns }) => {    
 
   const [multiSelections, setMultiSelections] = useState<any>([]);
+  const [filteredCampaigns, setFilteredCampaigns] = useState<Campaign[]>([]);
+
+  useEffect(() => {
+    setFilteredCampaigns(multiSelections.length === 0 ? campaigns : campaigns.filter(campaign => multiSelections.includes(campaign.status)));
+  }, [campaigns, multiSelections]);
 
   return (
     <>      
@@ -41,7 +41,7 @@ const CampaignsList: React.FC<OwnProps> = ({ campaigns }) => {
           <div>Ende <TiArrowUnsorted /></div>
           <div>Status <TiArrowUnsorted /></div>
         </div>
-        {campaigns.map(campaign =>
+        {filteredCampaigns.map(campaign =>
           <div className={styles.row} key={campaign.id}>
             <div><a href="#">{campaign.id}</a></div>
             <div>{campaign.client}</div>

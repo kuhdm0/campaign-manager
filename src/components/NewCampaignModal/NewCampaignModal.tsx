@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import APIService from '../../services/api-service';
 import { Campaign } from "../../types";
+import { statuses } from "../../constants";
 
 const apiService = new APIService();
 
@@ -93,9 +94,9 @@ const NewCampaignModal: React.FC<OwnProps> = ({ isModalOpen, closeModal, setCamp
                 <Col sm="9">
                     <Form.Select aria-label="Default select example" ref={statusRef} onChange={onChange} >
                         <option key='blankChoice' hidden>Status ferstellen</option>
-                        <option value="Erstellt">Erstellt</option>
-                        <option value="Gebucht">Gebucht</option>
-                        <option value="Arhiviert">Arhiviert</option>
+                        {statuses.map(status => 
+                            <option value={status} key={status}>{status}</option>
+                        )}                        
                     </Form.Select>
                 </Col>
             </Form.Group>

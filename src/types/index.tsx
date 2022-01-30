@@ -15,4 +15,4 @@ export interface Campaign {
     status: string,
 }
 
-export type Status = 'Created' | 'Booked' | 'Archived';
+export type Status = 'Erstellt' | 'Gebucht' | 'Archiviert';
