@@ -3,17 +3,7 @@ import styles from './styles.module.scss';
 import { Typeahead } from 'react-bootstrap-typeahead';
 import { TiArrowUnsorted } from 'react-icons/ti';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
-
-type Status = 'Created' | 'Booked' | 'Archived';
-
-interface Campaign {
-  id: string,
-  client: string,
-  name: string,
-  start: string,
-  end: string,
-  status: string,
-}
+import { Campaign, Status } from "../../types";
 
 const statuses: Status[] = [
   'Created',
@@ -21,90 +11,11 @@ const statuses: Status[] = [
   'Archived',
 ];
 
-const campaigns: Campaign[] = [
-  {
-    id: '12',
-    client: 'Kunde 1',
-    name: 'Zähne',
-    start: '15-10-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '8',
-    client: 'Kunde 2',
-    name: 'Wundheilung',
-    start: '01-05-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '14',
-    client: 'Kunde 1',
-    name: 'Zähne',
-    start: '15-10-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '3',
-    client: 'Kunde 2',
-    name: 'Wundheilung',
-    start: '01-05-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '9',
-    client: 'Kunde 1',
-    name: 'Zähne',
-    start: '15-10-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '4',
-    client: 'Kunde 2',
-    name: 'Wundheilung',
-    start: '01-05-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '6',
-    client: 'Kunde 1',
-    name: 'Zähne',
-    start: '15-10-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '15',
-    client: 'Kunde 2',
-    name: 'Wundheilung',
-    start: '01-05-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '2',
-    client: 'Kunde 1',
-    name: 'Zähne',
-    start: '15-10-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-  {
-    id: '19',
-    client: 'Kunde 2',
-    name: 'Wundheilung',
-    start: '01-05-2020',
-    end: '31-12-2020',
-    status: 'Angebot',
-  },
-];
+interface OwnProps {
+  campaigns: Campaign[];
+}
 
-const CampaignsList: React.FC = () => {  
+const CampaignsList: React.FC<OwnProps> = ({ campaigns }) => {    
 
   const [multiSelections, setMultiSelections] = useState<any>([]);
 
