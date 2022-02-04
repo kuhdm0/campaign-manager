@@ -79,3 +79,8 @@ button {
     background-color: $themeLightBlue;
     color: $themeBlack;
 }
+
+.list-content {
+    border-right: solid 1px $themeGridGray;
+    border-bottom: solid 1px $themeGridGray;    
+}
