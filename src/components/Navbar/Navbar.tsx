@@ -4,10 +4,10 @@ import menuImage from '../../images/menu.png'
 
 const Navbar: React.FC = () => {  
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <img alt="menu" src={menuImage} className={styles.menuIcon} />
       <div className={styles.navbarText}>Kampagnenmanager</div>
-    </div>
+    </nav>
   );
 };
 
