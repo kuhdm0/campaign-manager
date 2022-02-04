@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styles from './styles.module.scss';
-import { Typeahead } from 'react-bootstrap-typeahead';
-import { TiArrowUnsorted } from 'react-icons/ti';
 import 'react-bootstrap-typeahead/css/Typeahead.css';
+import { Typeahead } from 'react-bootstrap-typeahead';
+import { TiArrowUnsorted, TiArrowSortedDown } from 'react-icons/ti';
 import { Campaign } from "../../types";
 import { statuses } from "../../constants";
 
@@ -23,7 +23,7 @@ const CampaignsList: React.FC<OwnProps> = ({ campaigns }) => {
     <>      
       <div className={styles.content}>      
         <div className={styles.filterBar}>
-          <span>Status filtern</span>
+          <span className={styles.filterLabel}>Status filtern</span>
           <Typeahead
             id="basic-typeahead-multiple"
             labelKey="status"
@@ -31,7 +31,10 @@ const CampaignsList: React.FC<OwnProps> = ({ campaigns }) => {
             onChange={setMultiSelections}
             options={statuses}
             selected={multiSelections}
-          />     
+            clearButton
+          />
+          <div className={styles.selectionsNumber}>{multiSelections.length}</div>
+          <TiArrowSortedDown className={styles.arrowDown} />
         </div>
         <div className={`${styles.row} ${styles.tableHeader}`}>
           <div>CS-ID <TiArrowUnsorted /></div>

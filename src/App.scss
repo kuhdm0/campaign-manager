@@ -19,11 +19,6 @@ button {
     }
 }
 
-.rbt .rbt-input-multi .rbt-token {
-    background-color: $themeLightBlue;
-    color: $themeBlack;
-}
-
 .external-wrapper {
     padding: 32px;
     background: #fafafa;
@@ -67,4 +62,20 @@ button {
     color: $themeWhite;
     margin-top: -10px;
     cursor: pointer;
+}
+
+.rbt-aux {
+    button {
+        background-color: $themeWhite;
+    }
+}
+
+.rbt-input-wrapper .rbt-token .rbt-token-remove-button {
+    top: 0;
+    border-radius: 2px;
+}
+
+.rbt .rbt-input-multi .rbt-token {
+    background-color: $themeLightBlue;
+    color: $themeBlack;
 }
