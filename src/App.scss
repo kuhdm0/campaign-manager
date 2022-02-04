@@ -30,7 +30,7 @@ button {
     color: $themeBlack;
     border: solid 1px $themeGridGray;
     border-radius: 2px;
-    width: 1376px;
+    max-width: 1376px;
 }
 
 .header {
