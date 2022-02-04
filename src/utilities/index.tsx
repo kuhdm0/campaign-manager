@@ -1,7 +1,7 @@
 import { Campaign } from "../types";
 
-export const getNextId = (campaigns: Campaign[]) => {console.log('campaigns', campaigns)
-    const campaignsIds: number[] = campaigns.map(campaign => parseInt(campaign.id));console.log('campaignsIds', campaignsIds)
-    const maxId = campaignsIds.length ? Math.max(...campaignsIds) : 0;console.log('maxId', maxId)
+export const getNextId = (campaigns: Campaign[]) => {
+    const campaignsIds: number[] = campaigns.map(campaign => parseInt(campaign.id));
+    const maxId = campaignsIds.length ? Math.max(...campaignsIds) : 0;
     return (maxId + 1).toString();
 };
